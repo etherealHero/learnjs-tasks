@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
+    // например:
+
+    // до вызова функции
+    let menu = {
+      width: 200,
+      height: 300,
+      title: "my menu"
+    };
+
+    alert(JSON.stringify(menu))
+
+    multiplynumeric(menu);
+    
+    alert(JSON.stringify(menu))
+
+    // после вызова функции
+    // menu = {
+    //   width: 400,
+    //   height: 600,
+    //   title: "my menu"
+    // };
+    // обратите внимание, что multiplynumeric не нужно ничего возвращать. следует напрямую изменять объект.
+    // p.s. используйте typeof для проверки, что значение свойства числовое.
+
+    function multiplynumeric(obj) {
+      for (let key in obj) {
+        if (typeof obj[key] == 'number') obj[key] *= 2
+      }
+    }
+  </script>
+</body>
+</html>

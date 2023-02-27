@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function formatDate(date) {
+      let dayofmonth = date.getdate();
+      let month = date.getmonth() + 1;
+      let year = date.getfullyear();
+      let hour = date.gethours();
+      let minutes = date.getminutes();
+      let diffms = new date() - date;
+      let diffsec = math.round(diffms / 1000);
+      let diffmin = diffsec / 60;
+      let diffhour = diffmin / 60;
+
+      year = year.tostring().slice(-2);
+      month = month < 10 ? '0' + month : month;
+      dayofmonth = dayofmonth < 10 ? '0' + dayofmonth : dayofmonth;
+      hour = hour < 10 ? '0' + hour : hour;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+
+      if (diffsec < 1) {
+        return 'прямо сейчас';
+      } else if (diffmin < 1) {
+        return `${diffsec} сек. назад`
+      } else if (diffhour < 1) {
+        return `${diffmin} мин. назад`
+      } else {
+        return `${dayofmonth}.${month}.${year} ${hour}:${minutes}`
+      }
+    }
+  </script>
+</body>
+</html>

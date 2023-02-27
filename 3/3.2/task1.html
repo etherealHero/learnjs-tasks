@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function pow(x,n) // пробел между аргументами, блок функции кода после аргументов а не с новой строки
+    {
+      let result=1; // пробел между оператором
+      for(let i=0;i<n;i++) {result*=x;} // пробел после for и после ;
+      return result;
+    }
+
+    let x=prompt("x?",''), n=prompt("n?",'') // пробелы между оператором и аргументами
+    if (n<=0) // блок кода после условия а не с новой строки, пробелы между оператором сравнения
+    {
+      alert(`степень ${n} не поддерживается, введите целую степень, большую 0`);
+    }
+    else
+    {
+      alert(pow(x,n)) // пробелы после аргумента
+    }
+  </script>
+</body>
+</html>

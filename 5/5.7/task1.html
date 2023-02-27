@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Допустим, у нас есть массив arr.
+    // создайте функцию unique(arr), которая вернёт массив уникальных, не повторяющихся значений массива arr.
+    // например:
+
+    function unique(arr) {
+      /* ваш код */
+      const unique = []
+      for (let value of new Set(arr).values()) unique.push(value)
+      return unique
+    }
+
+    let values = ["hare", "krishna", "hare", "krishna",
+      "krishna", "krishna", "hare", "hare", ":-o"
+    ];
+
+    alert( unique(values) ); // hare,krishna,:-o
+    
+    // p.s. здесь мы используем строки, но значения могут быть любого типа.
+    // p.p.s. используйте set для хранения уникальных значений.
+  </script>
+</body>
+</html>

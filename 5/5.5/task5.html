@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+
+    // создайте функцию copysorted(arr), которая будет возвращать такую копию.
+
+    let arr = ["html", "javascript", "css"];
+
+    let sorted = copysorted(arr);
+
+    alert( sorted ); // css, html, javascript
+    alert( arr ); // html, javascript, css (без изменений)
+
+    function copysorted(arr) {
+      return arr.slice().sort()
+    }
+  </script>
+</body>
+</html>

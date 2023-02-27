@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age и сортирует их по нему.
+
+    // например:
+
+    let vasya = { name: "вася", age: 25 };
+    let petya = { name: "петя", age: 30 };
+    let masha = { name: "маша", age: 28 };
+
+    let arr = [ vasya, petya, masha ];
+
+    sorByAge(arr);
+
+    // теперь: [vasya, masha, petya]
+    alert(arr[0].name); // вася
+    alert(arr[1].name); // маша
+    alert(arr[2].name); // петя
+
+    function sorByAge(arr) {
+      arr.sort((a, b) => a.age > b.age ? 1 : -1)
+    }
+  </script>
+</body>
+</html>

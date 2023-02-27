@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getDateAgo(date, days) {
+      let datecopy = new date(date);
+
+      datecopy.setdate(date.getdate() - days);
+      return datecopy.getdate();
+    }
+
+    let date = new date(2015, 0, 2);
+
+    alert( getdateago(date, 1) ); // 1, (1 jan 2015)
+    alert( getdateago(date, 2) ); // 31, (31 dec 2014)
+    alert( getdateago(date, 365) ); // 2, (2 jan 2014)
+  </script>
+</body>
+</html>

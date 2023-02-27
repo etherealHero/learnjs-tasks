@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».
+    //
+    // то есть дефисы удаляются, а все слова после них получают заглавную букву.
+    //
+    // примеры:
+    //
+    // camelize("background-color") == 'backgroundcolor';
+    // camelize("list-style-image") == 'liststyleimage';
+    // camelize("-webkit-transition") == 'webkittransition';
+    // p.s. подсказка: используйте split, чтобы разбить строку на массив символов, потом переделайте всё как нужно и методом join соедините обратно.
+
+    const camelize = str => str.split('-').map((i, idx) => idx === 0 ? 
+      i : i[0].toUpperCase() + i.slice(1)).join('')
+
+    alert(camelize("background-color"))
+    alert(camelize("list-style-image"))
+    alert(camelize("-webkit-transition"))
+  </script>
+</body>
+</html>

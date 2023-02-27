@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Создайте функцию конструктор Calculator, которая создаёт «расширяемые» объекты калькулятора.
+    // задание состоит из двух частей.
+
+    // во-первых, реализуйте метод calculate(str), который принимает строку типа "1 + 2" в формате «число оператор число» (разделено пробелами) и возвращает результат. метод должен понимать плюс + и минус -.
+
+    // пример использования:
+
+    let calc = new Calculator;
+
+    alert( calc.calculate("3 + 7") ); // 10
+    // затем добавьте метод addmethod(name, func), который добавляет в калькулятор новые операции. он принимает оператор name и функцию с двумя аргументами func(a,b), которая описывает его.
+
+    // например, давайте добавим умножение *, деление / и возведение в степень **:
+
+    let powercalc = new Calculator;
+    powercalc.addMethod("*", (a, b) => a * b);
+    powercalc.addMethod("/", (a, b) => a / b);
+    powercalc.addMethod("**", (a, b) => a ** b);
+
+    let result = powercalc.calculate("2 ** 3");
+    alert( result ); // 8
+    // для этой задачи не нужны скобки или сложные выражения.
+    // числа и оператор разделены ровно одним пробелом.
+    // не лишним будет добавить обработку ошибок.
+
+    function Calculator() {
+      return {
+        calculate(str) {
+          let arr = str.split(' ')
+
+          return this.method[arr[1]](+arr[0], +arr[2])
+        },
+        addMethod(name, func) {
+          this.method[name] = func
+        },
+        method: {
+          ['+']: (a, b) => a + b,
+          ['-']: (a, b) => a - b,
+        },
+      }
+    }
+  </script>
+</body>
+</html>

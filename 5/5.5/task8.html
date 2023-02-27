@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
+
+    // напишите код, который создаст ещё один массив объектов с параметрами id и fullname, где fullname – состоит из name и surname.
+
+    // например:
+
+    let vasya = { name: "вася", surname: "пупкин", id: 1 };
+    let petya = { name: "петя", surname: "иванов", id: 2 };
+    let masha = { name: "маша", surname: "петрова", id: 3 };
+
+    let users = [ vasya, petya, masha ];
+
+    let usersmapped = users.map(user => ({
+      fullname: user.name + ' ' + user.surname,
+      id: user.id
+    })) /* ... ваш код ... */
+
+    alert(JSON.stringify(usersmapped))
+
+    /*
+    usersmapped = [
+      { fullname: "вася пупкин", id: 1 },
+      { fullname: "петя иванов", id: 2 },
+      { fullname: "маша петрова", id: 3 }
+    ]
+    */
+
+    alert( usersmapped[0].id ) // 1
+    alert( usersmapped[0].fullname ) // вася пупкин
+    // итак, на самом деле вам нужно трансформировать один массив объектов в другой. попробуйте использовать =>. это небольшая уловка.
+  </script>
+</body>
+</html>

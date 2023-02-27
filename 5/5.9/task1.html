@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Есть объект salaries с произвольным количеством свойств, содержащих заработные платы.
+    // напишите функцию sumsalaries(salaries), которая возвращает сумму всех зарплат с помощью метода object.values и цикла for..of.
+    // если объект salaries пуст, то результат должен быть 0.
+    // например:
+
+    let salaries = {
+      "john": 100,
+      "pete": 300,
+      "mary": 250
+    };
+
+    alert( sumsalaries(salaries) ); // 650
+
+    function sumsalaries(salaries) {
+      let total = 0
+      
+      for (let cache of Object.values(salaries)) total += cache
+
+      return total
+    }
+  </script>
+</body>
+</html>
